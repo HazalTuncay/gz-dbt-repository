@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: gz_raw_data        # bu senin veri kümesinin adı (source ismi)
+    database: theta-eon-473610-i7.gz_raw_data
+      # BigQuery proje ID — bu önemli!
+    schema: gz_raw_data     # BigQuery dataset adı
+    tables:
+      - name: raw_gz_sales
+      - name: raw_gz_product
+      - name: raw_gz_ship
