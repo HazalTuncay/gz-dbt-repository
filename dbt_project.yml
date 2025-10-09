@@ -1,14 +1,10 @@
-# dbt_project.yml dosyanızın EN BAŞI
-name: 'my_new_project'  # <-- Burası, dbt'nin ilk aradığı isimdir. Girinti OLMAMALI!
+name: 'my_new_project'
 config-version: 2
-profile: 'dbt_project' # (Sizin için BigQuery'ye bağlanmayı sağlayan profil adı)
-
-# ...
+profile: 'dbt_project'
 
 models:
-  my_new_project: # <-- Buradaki isim, yukarıdaki name ile AYNI OLMALIDIR!
+  my_new_project:
     mart:
-      +materialized: table 
-      
+      +materialized: "table"
       finance:
-        +schema: finance
+        +schema: 'finance'
