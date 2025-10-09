@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: gz_raw_data        # Kaynak adı (source ismi)
+    database: theta-eon-473610-i7   # BigQuery proje ID
+    schema: gz_raw_data      # BigQuery dataset adı
+    tables:
+      - name: raw_gz_sales
+      - name: raw_gz_product
+      - name: raw_gz_ship
+
+models:
+  - name: raw               # dbt model adı
+    description: "Raw verilerin staging tablosu"
+    schema: gz_raw_data
+    columns:
+      - name: sales
+        description: "Sales tablosu"
+        identifier: raw_gz_sales
+      - name: product
+        description: "Product tablosu"
+        identifier: raw_gz_product
+      - name: ship
+        description: "Ship tablosu"
+        identifier: raw_gz_ship
